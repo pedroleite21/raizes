@@ -1,3 +1,5 @@
+require('dotenv').config({ silent: true });
+
 module.exports = {
   siteMetadata: {
     title: 'raízes',
@@ -18,11 +20,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `poppins\:300,300i,400,400i,600`
-        ],
-        display: 'swap'
-      }
+        fonts: [`poppins\:300,300i,400,400i,600`],
+        display: 'swap',
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -38,4 +38,4 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-}
+};

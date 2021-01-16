@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+
+const markerPosition = {
+  lat: -22.907267350617246,
+  lng: -43.188203359684444,
+};
+
+export default function Map({ coordinates = null, onMarkerClick = () => { } }) {
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: process.env.GATSBY_MAPS_API,
+  });
+
+  const renderMap = () => {
+    return (
+      <GoogleMap
+        mapContainerStyle={{
+          height: '100%',
+          width: '100%'
+        }}
+        zoom={6}
+        center={{
+          lat: coordinates.latitude,
+          lng: coordinates.longitude,
+        }}
+      >
+        <Marker
+          label="Rio de Janeiro"
+          onClick={onMarkerClick}
+          position={markerPosition}
+        />
+      </GoogleMap>
+    )
+  };
+
+  if (loadError) {
+    return <div>Map cannot be loaded right now, sorry.</div>
+  }
+
+  return isLoaded ? renderMap() : null;
+}
