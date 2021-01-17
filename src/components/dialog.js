@@ -25,8 +25,14 @@ import Logo from './logo';
 import avatarImage from '../assets/avatar.png';
 import { Typography } from '@material-ui/core';
 import pixButton from '../assets/pix_button.png';
-import TextField from '@material-ui/core/TextField';
+import MuiTextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
+const TextField = styled(MuiTextField)({
+  '.MuiInputBase-root': {
+    color: '#212121',
+  }
+});
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -66,7 +72,7 @@ const divCss = {
 };
 
 const textFieldCss = {
-  margin: '12px 0',
+  margin: '24px 0',
 };
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -178,6 +184,7 @@ export default function Dialog() {
                   fullWidth
                   InputLabelProps={{ shrink: true }}
                   InputProps={{ placeholder: 'R$ 20,00' }}
+                  variant="outlined"
                 />
               </div>
               <div css={textFieldCss}>
@@ -187,6 +194,7 @@ export default function Dialog() {
                   fullWidth
                   InputLabelProps={{ shrink: true }}
                   InputProps={{ placeholder: 'Nome, CPF/CNPJ ou chave Pix' }}
+                  variant="outlined"
                 />
               </div>
               <Button fullWidth color="primary" variant="contained" onClick={handleClick}>
