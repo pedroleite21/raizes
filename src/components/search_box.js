@@ -12,6 +12,7 @@ export default function SearchBox({
         <InputBase
           placeholder={placeholder}
           inputProps={{ 'aria-label': placeholder }}
+          style={{ color: '#E0A31B', padding: 5 }}
         />
       </Paper>
     </div>
