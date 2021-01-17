@@ -47,7 +47,7 @@ export default function Place() {
           <>
             <div>
               <Typography variant="h4" component="h1" color="primary">
-                Lapa, Rio de Janeiro
+                Rio de Janeiro
               </Typography>
               <span>Navegue pela história daqui</span>
             </div>
