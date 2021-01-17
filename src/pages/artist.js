@@ -18,6 +18,10 @@ import image4 from '../assets/images/artist/4.png';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: '#E0A31B',
+    },
     margin: theme.spacing(1),
     padding: theme.spacing(1),
     textAlign: 'center',
