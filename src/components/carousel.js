@@ -22,40 +22,28 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const CarouselItem = styled.div({
+export const CarouselItem = styled.div({
   alignItems: 'center',
   display: 'flex !important',
-  height: 80,
   justifyContent: 'center',
-  padding: '0 8px',
+  padding: '0 4px',
   width: '33.333%',
 });
 
-export default function Carousel({ data, title = 'Música', ...rest }) {
+const dataProp = [1, 2, 3, 4, 5, 6];
+
+export default function Carousel({ data = dataProp, title = 'Música', ...rest }) {
   return (
     <StyledDiv>
       <StyledTypography component="h2" variant="h6" color="primary">
         {title}
       </StyledTypography>
       <Slider {...settings}>
-        <CarouselItem>
-          <span>1</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>2</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>3</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>4</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>5</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>6</span>
-        </CarouselItem>
+        {data.map((v, index) => (
+          <CarouselItem key={`carousel-item-${index}`}>
+            {v}
+          </CarouselItem>
+        ))}
       </Slider>
     </StyledDiv>
   );
