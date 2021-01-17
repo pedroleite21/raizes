@@ -15,7 +15,7 @@ import { navigate } from 'gatsby';
 
 // Carousel images
 
-import image1 from '../assets/images/carousel/1.png';
+import image1c from '../assets/images/carousel/1.png';
 import image12 from '../assets/images/carousel/2.png';
 import image3 from '../assets/images/carousel/3.png';
 import image4 from '../assets/images/carousel/4.png';
@@ -82,7 +82,7 @@ export default function Content() {
     setValue(newValue);
   };
 
-  const dataMusic = [ image1, image12, image3, image4 ];
+  const dataMusic = [ image1c, image12, image3, image4 ];
   const dataVisualArtist = [ image2, image22, image23, image24];
   const dataPodcast = [ image31, image32, image31, image32 ];
 
