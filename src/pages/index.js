@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Map from '../components/map';
 import useGeolocation from '../utils/useGeolocation';
 import SearchBox from '../components/search_box';
+import { withStyles } from '@material-ui/core/styles';
 
 const MapDiv = styled.div({
   ...position('absolute', 0),
@@ -23,6 +24,16 @@ const positionCss = {
 export default function Home() {
   const coordinates = useGeolocation();
 
+  const ColorButton = withStyles((theme) => ({
+    root: {
+      color: theme.palette.getContrastText('#E0A31B'),
+      backgroundColor: '#E0A31B',
+      '&:hover': {
+        backgroundColor: '#F5D08E',
+      },
+    },
+  }))(Button);
+
   return (
     <>
       <MapDiv>
@@ -32,13 +43,17 @@ export default function Home() {
         />
       </MapDiv>
       <SearchBox css={{ ...positionCss, top: 48 }} />
-      <Button
+      <ColorButton
         variant="contained"
         color="secondary"
-        css={{ ...positionCss, bottom: 48 }}
+        css={{ 
+          ...positionCss,
+          bottom: 48,
+          backgroundColor: '#E0A31B'
+        }}
       >
         Confirmar local
-      </Button>
+      </ColorButton>
     </>
   );
 }
