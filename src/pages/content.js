@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 import Carousel from '../components/carousel';
 import Layout from '../components/layout';
 import SearchBox from '../components/search_box';
+import ImageGrid from '../components/image_grid';
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}px`,
@@ -87,6 +88,7 @@ export default function Content() {
         </TabPanel>
         <TabPanel value={value} index={1}>
           <SearchBox css={{ width: '100%' }} />
+          <ImageGrid />
         </TabPanel>
       </Layout>
     </div>

@@ -28,8 +28,7 @@ export default function Home() {
 
   const nextPage = () => {
     navigate('/place');
-  }
-  
+  };
 
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -49,15 +48,15 @@ export default function Home() {
           onMarkerClick={() => console.log('vai pra página')}
         />
       </MapDiv>
-      <SearchBox css={{ ...positionCss, top: 48  }} />
+      <SearchBox css={{ ...positionCss, top: 48 }} />
       <ColorButton
         onClick={nextPage}
         variant="contained"
         color="secondary"
-        css={{ 
+        css={{
           ...positionCss,
           bottom: 48,
-          backgroundColor: '#E0A31B'
+          backgroundColor: '#E0A31B',
         }}
       >
         Confirmar local
