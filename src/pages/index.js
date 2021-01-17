@@ -43,7 +43,7 @@ export default function Home() {
           onMarkerClick={() => console.log('vai pra página')}
         />
       </MapDiv>
-      <SearchBox css={{ ...positionCss, top: 48 }} />
+      <SearchBox css={{ ...positionCss, top: 48  }} />
       <ColorButton
         variant="contained"
         color="secondary"
