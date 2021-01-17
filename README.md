@@ -33,7 +33,7 @@ Raízes Web App para o hackathon CCR 2° edição.
     yarn dev
     ```
  
-2.  **Deploy**
+ 2.  **Deploy**
 
 ** Para seguir os próximos passos você deve ter o arquivo `.env` configurado e acesso ao Firebase do projeto
 
