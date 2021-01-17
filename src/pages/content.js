@@ -31,15 +31,11 @@ import image2 from '../assets/pequena-africa-1-2.jpg';
 import image3 from '../assets/pequena-africa-3.jpg';
 
 const imageSrcCss = {
-  backgroundSize: 'cover',
-  backgroundPosition: 'center 40%',
-  height: 140,
+  height: 100,
   width: '100%',
 };
 
-const content = [image1, image2c, image3c, image1].map((v) => (
-  <span css={imageSrcCss} style={{ backgroundImage: `url(${v})` }} />
-));
+const content = [image1, image2, image3, image1];
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}px`,
@@ -82,8 +78,8 @@ export default function Content() {
     setValue(newValue);
   };
 
-  const dataMusic = [ image1c, image12, image3, image4 ];
-  const dataVisualArtist = [ image2, image22, image23, image24];
+  const dataMusic = [ image1c, image12, image3c, image4 ];
+  const dataVisualArtist = [ image2c, image22, image23, image24];
   const dataPodcast = [ image31, image32, image31, image32 ];
 
   return (
@@ -151,7 +147,7 @@ export default function Content() {
                       Pequena África
                     </Typography>
                   </Grid>
-                  <Carousel title="Fotos" data={content} />
+                  <Carousel title="Fotos" data={content} imageStyle={imageSrcCss} />
                   <p>
                     Descoberta recentemente com obras para o Porto Maravilha, a Pequena África traz a enorme herança africana deixada ao Brasil depois de tanto sofrimento e opressão. Não muito conhecida por cariocas e turistas, são os bairros da Saúde, Gamboa e Santo Cristo, ambos na região do Centro, que abrigam os monumentos. Este artigo possui o objetivo de ressaltar a importância da história negra para o Rio de Janeiro. Inclusive, foi em um dos pontos da Pequena África que o samba começou a ser construído. Atente-se às informações!
                   </p>

@@ -33,7 +33,7 @@ export const CarouselItem = styled.div({
   width: '100%',
 });
 
-export default function Carousel({ data, title = 'Música', onClick, ...rest }) {
+export default function Carousel({ data, title = 'Música', onClick, imageStyle, ...rest }) {
   return (
     <StyledDiv>
       <StyledTypography component="h2" variant="h6" color="primary">
@@ -43,7 +43,7 @@ export default function Carousel({ data, title = 'Música', onClick, ...rest }) 
         {data.map((v, index) => (
           <CarouselItem key={`carousel-item-${index}`}>
             <div role="button" css={{ cursor: 'pointer' }} onClick={onClick}>
-              <img css={{ width: '100%', height: '100%' }} src={v} />
+              <img css={{ width: '100%', height: '100%', ...imageStyle }} src={v} />
             </div>
           </CarouselItem>
         ))}
