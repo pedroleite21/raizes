@@ -17,9 +17,9 @@ import { navigate } from 'gatsby';
 
 import image1c from '../assets/images/carousel/1.png';
 import image12 from '../assets/images/carousel/2.png';
-import image3 from '../assets/images/carousel/3.png';
+import image3c from '../assets/images/carousel/3.png';
 import image4 from '../assets/images/carousel/4.png';
-import image2 from '../assets/images/carousel/2-1.png';
+import image2c from '../assets/images/carousel/2-1.png';
 import image22 from '../assets/images/carousel/2-2.png';
 import image23 from '../assets/images/carousel/2-3.png';
 import image24 from '../assets/images/carousel/2-4.png';
@@ -37,7 +37,7 @@ const imageSrcCss = {
   width: '100%',
 };
 
-const content = [image1, image2, image3, image1].map((v) => (
+const content = [image1, image2c, image3c, image1].map((v) => (
   <span css={imageSrcCss} style={{ backgroundImage: `url(${v})` }} />
 ));
 
