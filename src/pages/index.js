@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Button from '@material-ui/core/Button';
 import Map from '../components/map';
 import useGeolocation from '../utils/useGeolocation';
+import SEO from '../components/seo';
 import SearchBox from '../components/search_box';
 import { withStyles } from '@material-ui/core/styles';
 import { navigate } from 'gatsby';
@@ -42,6 +43,7 @@ export default function Home() {
 
   return (
     <>
+      <SEO pageTitle="Escolha uma cidade" />
       <MapDiv>
         <Map
           coordinates={coordinates}

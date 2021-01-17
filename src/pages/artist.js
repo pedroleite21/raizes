@@ -3,10 +3,12 @@ import Typography from '@material-ui/core/Typography';
 import IconMarker from '@material-ui/icons/Place';
 import Layout from '../components/layout';
 import Header from '../components/header';
+import SEO from '../components/seo';
 
 export default function Artist() {
   return (
     <div>
+      <SEO pageTitle="Gabz - Rio de Janeiro" />
       <Header
         subHeader={
           <>

@@ -11,6 +11,7 @@ import image2 from '../assets/images/2.jpg';
 import image3 from '../assets/images/3.jpg';
 import image4 from '../assets/images/4.jpg';
 import image5 from '../assets/images/5.jpg';
+import SEO from '../components/seo';
 
 const content = [
   { label: 'Dias Atuais', image: image1 },
@@ -42,6 +43,7 @@ export default function Place() {
 
   return (
     <div>
+      <SEO pageTitle="Rio de Janeiro" />
       <Header
         subHeader={
           <>
