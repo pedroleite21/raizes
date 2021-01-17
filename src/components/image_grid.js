@@ -5,7 +5,12 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import historyImage from '../assets/history.jpg';
 
-const data = ['Pequena África', 'Pedra do Sal', 'Jardins Suspensos', 'Cristo Redentor'];
+const data = [
+  'Pequena África',
+  'Pedra do Sal',
+  'Jardins Suspensos',
+  'Cristo Redentor',
+];
 
 const Grid = styled.div(({ theme }) => ({
   display: 'grid',
@@ -35,7 +40,7 @@ const backdropCss = {
   backgroundColor: '#212121',
   opacity: 0.5,
   transition: 'opacity 150ms ease',
-}
+};
 
 const imageButton = {
   ...position('absolute', 0),
@@ -58,11 +63,7 @@ export default function ImageGrid({ onItemClick }) {
           />
           <span css={backdropCss} className="backdrop" />
           <span css={imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-            >
+            <Typography component="span" variant="subtitle1" color="inherit">
               {v}
             </Typography>
           </span>
