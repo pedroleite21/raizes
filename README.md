@@ -10,6 +10,13 @@
 
 Raízes Web App para o hackathon CCR 2° edição.
 
+### Tecnologias
+
+- [PWA](https://web.dev/progressive-web-apps/)
+- [React](https://reactjs.org/)
+- [Gatsby](https://www.gatsbyjs.com/)
+- [Firebase](https://firebase.google.com/)
+
 ## 🚀 Quick start
 
 1.  **Rodar o projeto**
@@ -41,4 +48,5 @@ Raízes Web App para o hackathon CCR 2° edição.
     
     
     firebase deploy
+    
     
