@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import Header from '../components/header';
 
 export default function Artist() {
-
   return (
     <div>
       <Header
@@ -28,8 +27,7 @@ export default function Artist() {
           padding: '200px 16px 32px',
           width: '100%',
         }}
-      >
-      </Layout>
+      ></Layout>
     </div>
   );
 }

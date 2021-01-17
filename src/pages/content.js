@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { position } from 'polished';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Header from '../components/header';
@@ -82,9 +81,9 @@ export default function Content() {
     setValue(newValue);
   };
 
-  const dataMusic = [ image1c, image12, image3, image4 ];
-  const dataVisualArtist = [ image2, image22, image23, image24];
-  const dataPodcast = [ image31, image32, image31, image32 ];
+  const dataMusic = [image1c, image12, image3, image4];
+  const dataVisualArtist = [image2, image22, image23, image24];
+  const dataPodcast = [image31, image32, image31, image32];
 
   return (
     <div>
@@ -121,9 +120,21 @@ export default function Content() {
             css={{ width: '100%' }}
             placeholder="Procure um conteúdo"
           />
-          <Carousel title="Música" data={dataMusic} onClick={() => navigate('/artist')} />
-          <Carousel title="Artistas Visuais" data={dataVisualArtist} onClick={() => navigate('/artist')} />
-          <Carousel title="Podcast" data={dataPodcast} onClick={() => navigate('/artist')} />
+          <Carousel
+            title="Música"
+            data={dataMusic}
+            onClick={() => navigate('/artist')}
+          />
+          <Carousel
+            title="Artistas Visuais"
+            data={dataVisualArtist}
+            onClick={() => navigate('/artist')}
+          />
+          <Carousel
+            title="Podcast"
+            data={dataPodcast}
+            onClick={() => navigate('/artist')}
+          />
         </TabPanel>
         <TabPanel value={value} index={1}>
           {!history ? (
