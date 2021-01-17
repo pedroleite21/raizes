@@ -4,12 +4,15 @@ import { position } from 'polished';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import historyImage from '../assets/history.jpg';
+import jdImage4 from '../assets/jardim-suspenso.png';
+import peqAfrica2 from '../assets/peq-africa2.png';
+import cemPretosNovos from '../assets/cem-pretos-novos.png';
 
 const data = [
   'Pequena África',
   'Pedra do Sal',
   'Jardins Suspensos',
-  'Cristo Redentor',
+  'Cemitério dos Pretos Novos',
 ];
 
 const Grid = styled.div(({ theme }) => ({
@@ -51,14 +54,15 @@ const imageButton = {
 };
 
 export default function ImageGrid({ onItemClick }) {
+  const images = [peqAfrica2, historyImage, jdImage4, cemPretosNovos];
   return (
     <Grid>
-      {data.map((v) => (
+      {data.map((v, index) => (
         <GridButton focusRipple key={v} onClick={onItemClick}>
           <span
             css={imageSrcCss}
             style={{
-              backgroundImage: `url(${historyImage})`,
+              backgroundImage: `url(${images[index]})`,
             }}
           />
           <span css={backdropCss} className="backdrop" />
