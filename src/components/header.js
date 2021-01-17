@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from './logo';
 import { useDrawerContext } from '../context/drawerContext';
+import { navigate } from 'gatsby';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'space-between',
@@ -43,7 +44,7 @@ export default function Header({ subHeader = null, tabs }) {
         >
           <MenuIcon />
         </StyledMenuButton>
-        <Logo />
+        <div css={{ cursor: 'pointer' }} onClick={() => navigate('/')}><Logo /></div>
       </StyledToolbar>
       {subHeader && <StyledPlace>{subHeader}</StyledPlace>}
       {tabs}
