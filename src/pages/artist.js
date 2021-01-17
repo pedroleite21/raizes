@@ -41,8 +41,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Artist() {
   const audioRef = React.useRef();
 
-  console.log(audioRef);
-
   const handleClick = () => {
     const { current: audioNode } = audioRef;
 
