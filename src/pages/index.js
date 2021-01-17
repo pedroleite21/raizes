@@ -15,6 +15,7 @@ const MapDiv = styled.div({
 const positionCss = {
   left: '50%',
   maxWidth: 480,
+  padding: '0 16px',
   position: 'absolute',
   transform: 'translateX(-50%)',
   width: '100%',
