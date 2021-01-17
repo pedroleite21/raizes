@@ -3,30 +3,32 @@ import Typography from '@material-ui/core/Typography';
 import Header from '../components/header';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Box from '@material-ui/core/Box';
 import styled from '@emotion/styled';
+import Carousel from '../components/carousel';
 import Layout from '../components/layout';
+import SearchBox from '../components/search_box';
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}px`,
 }));
+
+const contentCss = {
+  width: '100%',
+};
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
+      aria-labelledby={`simple-tab-${index}`}
+      css={contentCss}
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      role="tabpanel"
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && children}
     </div>
   );
 }
@@ -76,10 +78,15 @@ export default function Content() {
         }}
       >
         <TabPanel value={value} index={0}>
-          Item One
+          <SearchBox
+            css={{ width: '100%' }}
+            placeholder="Procure um conteúdo"
+          />
+          <Carousel title="Música" />
+          <Carousel title="Artistas Visuais" />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <SearchBox css={{ width: '100%' }} />
         </TabPanel>
       </Layout>
     </div>

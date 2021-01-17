@@ -2,13 +2,16 @@ import * as React from 'react';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 
-export default function SearchBox(props) {
+export default function SearchBox({
+  placeholder = 'Pesquise um local',
+  ...rest
+}) {
   return (
-    <div {...props}>
+    <div {...rest}>
       <Paper component="form">
         <InputBase
-          placeholder="Pesquise um local"
-          inputProps={{ 'aria-label': 'pesquise google maps' }}
+          placeholder={placeholder}
+          inputProps={{ 'aria-label': placeholder }}
         />
       </Paper>
     </div>
