@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import mapTheme from '../utils/mapTheme';
 
 const markerPosition = {
   lat: -22.907267350617246,
@@ -18,14 +19,18 @@ export default function Map({ coordinates = null, onMarkerClick = () => { } }) {
           height: '100%',
           width: '100%'
         }}
-        zoom={6}
+        zoom={5}
         center={{
           lat: coordinates.latitude,
           lng: coordinates.longitude,
         }}
+        mapTypeId="roadmap"
+        options={{
+          styles: mapTheme,
+          disableDefaultUI: true,
+        }}
       >
         <Marker
-          label="Rio de Janeiro"
           onClick={onMarkerClick}
           position={markerPosition}
         />

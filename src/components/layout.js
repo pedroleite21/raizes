@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-export default function Layout({ children }) {
+export default function Layout({ children, ...rest }) {
   return (
-    <main>
+    <main {...rest}>
       {children}
     </main>
   )

@@ -2,16 +2,25 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
+    text: {
+      primary: '#fff',
+    },
     primary: {
-      main: '#556cd6',
+      main: '#E0A31B',
     },
     secondary: {
-      main: '#19857b',
+      main: '#C8F4DC',
     },
+    background: {
+      default: '#212121',
+      paper: '#303030',
+    }
   },
   typography: {
     fontFamily: '"Poppins", Arial, Helvetica, sans-serif',
   },
 });
+
+console.log(theme);
 
 export default theme;
