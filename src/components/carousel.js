@@ -32,7 +32,11 @@ export const CarouselItem = styled.div({
 
 const dataProp = [1, 2, 3, 4, 5, 6];
 
-export default function Carousel({ data = dataProp, title = 'Música', ...rest }) {
+export default function Carousel({
+  data = dataProp,
+  title = 'Música',
+  ...rest
+}) {
   return (
     <StyledDiv>
       <StyledTypography component="h2" variant="h6" color="primary">
@@ -40,9 +44,7 @@ export default function Carousel({ data = dataProp, title = 'Música', ...rest }
       </StyledTypography>
       <Slider {...settings}>
         {data.map((v, index) => (
-          <CarouselItem key={`carousel-item-${index}`}>
-            {v}
-          </CarouselItem>
+          <CarouselItem key={`carousel-item-${index}`}>{v}</CarouselItem>
         ))}
       </Slider>
     </StyledDiv>

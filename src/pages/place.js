@@ -36,10 +36,9 @@ const cardStyle = {
 };
 
 export default function Place() {
-
   const nextPage = () => {
     navigate('/content');
-  }
+  };
 
   return (
     <div>
@@ -69,7 +68,7 @@ export default function Place() {
           {content.map(({ label, image }, index) => (
             <div
               onClick={nextPage}
-              role='button'
+              role="button"
               key={label}
               css={{
                 ...cardStyle,
@@ -80,7 +79,9 @@ export default function Place() {
                 padding: '32px 16px',
               }}
             >
-              <span><img src={image} alt="Logo" style={{ borderRadius: 10 }} /></span>
+              <span>
+                <img src={image} alt="Logo" style={{ borderRadius: 10 }} />
+              </span>
               <Typography
                 variant="h6"
                 component="span"

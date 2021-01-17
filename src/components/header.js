@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from './logo';
+import { useDrawerContext } from '../context/drawerContext';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'space-between',
@@ -25,10 +26,21 @@ const StyledMenuButton = styled(IconButton)(({ theme }) => ({
 }));
 
 export default function Header({ subHeader = null, tabs }) {
+  const { toggleDrawer } = useDrawerContext();
+
+  const handleOpenDrawer = () => {
+    toggleDrawer();
+  };
+
   return (
     <AppBar position="fixed" color="inherit">
       <StyledToolbar>
-        <StyledMenuButton edge="start" color="inherit" aria-label="open drawer">
+        <StyledMenuButton
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleOpenDrawer}
+        >
           <MenuIcon />
         </StyledMenuButton>
         <Logo />
