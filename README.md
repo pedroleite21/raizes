@@ -1,11 +1,11 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="#">
-    <img alt="Raízes" src="https://github.com/pedroleite21/raizes/blob/main/src/assets/logo-raizes.png?raw=true" width="100" />
+    <img alt="Raízes" src="https://github.com/pedroleite21/raizes/blob/main/src/assets/logo-raizes.png?raw=true" width="300" />
   </a>
 </p>
-<h1 align="center">
-  Raízes Web App
+<h1>
+      Raízes Web App
 </h1>
 
 Raízes Web App para o hackathon CCR 2° edição.
