@@ -61,7 +61,7 @@ const divCss = {
 
 const textFieldCss = {
   margin: '12px 0',
-}
+};
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="right" ref={ref} {...props} />;
@@ -120,61 +120,61 @@ export default function Dialog() {
             </ListItem>
           </List>
         ) : (
-            <div css={{ padding: '12px 24px' }}>
-              <Grid container spacing={2} alignItems="center">
+          <div css={{ padding: '12px 24px' }}>
+            <Grid container spacing={2} alignItems="center">
+              <Grid item>
+                <IconButton
+                  edge="start"
+                  color="primary"
+                  onClick={() => setGanhos(false)}
+                >
+                  <ArrowBackIcon />
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <Typography color="primary">Ganhos</Typography>
+              </Grid>
+            </Grid>
+            <StyledCard>
+              <Grid container spacing={3}>
                 <Grid item>
-                  <IconButton
-                    edge="start"
-                    color="primary"
-                    onClick={() => setGanhos(false)}
-                  >
-                    <ArrowBackIcon />
-                  </IconButton>
+                  <span css={{ display: 'block' }}>Saldo Atual: R$ 550</span>
+                  <span>Saldo Doado: R$ 165 no útlimo mês</span>
                 </Grid>
                 <Grid item>
-                  <Typography color="primary">Ganhos</Typography>
+                  <img src={pixButton} />
                 </Grid>
               </Grid>
-              <StyledCard>
-                <Grid container spacing={3}>
-                  <Grid item>
-                    <span css={{ display: 'block' }}>Saldo Atual: R$ 550</span>
-                    <span>Saldo Doado: R$ 165 no útlimo mês</span>
-                  </Grid>
-                  <Grid item>
-                    <img src={pixButton} />
-                  </Grid>
-                </Grid>
-              </StyledCard>
-              <StyledCard>
-                <span>
-                  Você contribuiu para 6 Jovens Artistas no último mês e você está
-                  doando 30% do seu saldo no raízes.
+            </StyledCard>
+            <StyledCard>
+              <span>
+                Você contribuiu para 6 Jovens Artistas no último mês e você está
+                doando 30% do seu saldo no raízes.
               </span>
-              </StyledCard>
-              <div css={textFieldCss}>
-                <TextField
-                  id="text-field"
-                  label="Qual o valor de transferência?"
-                  fullWidth
-                  InputLabelProps={{ shrink: true }}
-                  InputProps={{ placeholder: "R$ 20,00" }}
-                />
-              </div>
-              <div css={textFieldCss}>
-                <TextField
-                  id="text-field"
-                  label="Para quem você quer transferir?"
-                  fullWidth
-                  InputLabelProps={{ shrink: true }}
-                  InputProps={{ placeholder: "Nome, CPF/CNPJ ou chave Pix" }}
-                />
-              </div>
-              <Button fullWidth color="primary" variant="contained">
-                Transferir
-              </Button>
+            </StyledCard>
+            <div css={textFieldCss}>
+              <TextField
+                id="text-field"
+                label="Qual o valor de transferência?"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                InputProps={{ placeholder: 'R$ 20,00' }}
+              />
             </div>
-          )}
+            <div css={textFieldCss}>
+              <TextField
+                id="text-field"
+                label="Para quem você quer transferir?"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                InputProps={{ placeholder: 'Nome, CPF/CNPJ ou chave Pix' }}
+              />
+            </div>
+            <Button fullWidth color="primary" variant="contained">
+              Transferir
+            </Button>
+          </div>
+        )}
       </div>
       <BottomAppBar position="fixed" color="primary">
         <Toolbar>

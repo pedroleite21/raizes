@@ -30,15 +30,11 @@ import image2 from '../assets/pequena-africa-1-2.jpg';
 import image3 from '../assets/pequena-africa-3.jpg';
 
 const imageSrcCss = {
-  backgroundSize: 'cover',
-  backgroundPosition: 'center 40%',
-  height: 140,
+  height: 100,
   width: '100%',
 };
 
-const content = [image1, image2c, image3c, image1].map((v) => (
-  <span css={imageSrcCss} style={{ backgroundImage: `url(${v})` }} />
-));
+const content = [image1, image2, image3, image1];
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}px`,
@@ -81,8 +77,8 @@ export default function Content() {
     setValue(newValue);
   };
 
-  const dataMusic = [image1c, image12, image3, image4];
-  const dataVisualArtist = [image2, image22, image23, image24];
+  const dataMusic = [image1c, image12, image3c, image4];
+  const dataVisualArtist = [image2c, image22, image23, image24];
   const dataPodcast = [image31, image32, image31, image32];
 
   return (

@@ -33,12 +33,11 @@ export const CarouselItem = styled.div({
   width: '100%',
 });
 
-const dataProp = [1, 2, 3, 4, 5, 6];
-
 export default function Carousel({
-  data = dataProp,
+  data,
   title = 'Música',
-  onClick = () => {},
+  onClick,
+  imageStyle,
   ...rest
 }) {
   return (
@@ -50,7 +49,10 @@ export default function Carousel({
         {data.map((v, index) => (
           <CarouselItem key={`carousel-item-${index}`}>
             <div role="button" css={{ cursor: 'pointer' }} onClick={onClick}>
-              <img css={{ width: '100%', height: '100%' }} src={v} />
+              <img
+                css={{ width: '100%', height: '100%', ...imageStyle }}
+                src={v}
+              />
             </div>
           </CarouselItem>
         ))}
