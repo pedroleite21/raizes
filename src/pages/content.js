@@ -8,6 +8,20 @@ import Carousel from '../components/carousel';
 import Layout from '../components/layout';
 import SearchBox from '../components/search_box';
 import ImageGrid from '../components/image_grid';
+import { navigate } from 'gatsby';
+
+// Carousel images
+
+import image1 from '../assets/images/carousel/1.png';
+import image12 from '../assets/images/carousel/2.png';
+import image3 from '../assets/images/carousel/3.png';
+import image4 from '../assets/images/carousel/4.png';
+import image2 from '../assets/images/carousel/2-1.png';
+import image22 from '../assets/images/carousel/2-2.png';
+import image23 from '../assets/images/carousel/2-3.png';
+import image24 from '../assets/images/carousel/2-4.png';
+import image31 from '../assets/images/carousel/3-1.png';
+import image32 from '../assets/images/carousel/3-2.png';
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}px`,
@@ -48,6 +62,10 @@ export default function Content() {
     setValue(newValue);
   };
 
+  const dataMusic = [ image1, image12, image3, image4 ];
+  const dataVisualArtist = [ image2, image22, image23, image24];
+  const dataPodcast = [ image31, image32, image31, image32 ];
+
   return (
     <div>
       <Header
@@ -83,8 +101,9 @@ export default function Content() {
             css={{ width: '100%' }}
             placeholder="Procure um conteúdo"
           />
-          <Carousel title="Música" />
-          <Carousel title="Artistas Visuais" />
+          <Carousel title="Música" data={dataMusic} onClick={() => navigate('/artist')} />
+          <Carousel title="Artistas Visuais" data={dataVisualArtist} onClick={() => navigate('/artist')} />
+          <Carousel title="Podcast" data={dataPodcast} onClick={() => navigate('/artist')} />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <SearchBox css={{ width: '100%' }} />

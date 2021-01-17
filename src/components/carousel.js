@@ -16,46 +16,37 @@ const settings = {
 const StyledDiv = styled(Typography)(({ theme }) => ({
   paddingBottom: theme.spacing(3),
   paddingTop: theme.spacing(3),
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const CarouselItem = styled.div({
+export const CarouselItem = styled.div({
   alignItems: 'center',
   display: 'flex !important',
-  height: 80,
   justifyContent: 'center',
-  padding: '0 8px',
-  width: '33.333%',
+  padding: '8px',
+  position: 'relative',
+  width: '100%',
 });
 
-export default function Carousel({ data, title = 'Música', ...rest }) {
+export default function Carousel({ data, title = 'Música', onClick, ...rest }) {
   return (
     <StyledDiv>
       <StyledTypography component="h2" variant="h6" color="primary">
         {title}
       </StyledTypography>
       <Slider {...settings}>
-        <CarouselItem>
-          <span>1</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>2</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>3</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>4</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>5</span>
-        </CarouselItem>
-        <CarouselItem>
-          <span>6</span>
-        </CarouselItem>
+        {data.map((v, index) => (
+          <CarouselItem key={`carousel-item-${index}`}>
+            <div role="button" css={{ cursor: 'pointer' }} onClick={onClick}>
+              <img css={{ width: '100%', height: '100%' }} src={v} />
+            </div>
+          </CarouselItem>
+        ))}
       </Slider>
     </StyledDiv>
   );
