@@ -37,8 +37,8 @@ Raízes Web App para o hackathon CCR 2° edição.
 
 ** Para seguir os próximos passos você deve ter o arquivo `.env` configurado e acesso ao Firebase do projeto
 
-    1.2  **Firebase CLI**
+   2.1  **Firebase CLI**
     
-    ```shell
+    
     firebase deploy
-    ```
+    
