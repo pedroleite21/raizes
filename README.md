@@ -17,6 +17,17 @@ Raízes Web App para o hackathon CCR 2° edição.
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Firebase](https://firebase.google.com/)
 
+### Time
+
+- [Bianca](https://www.linkedin.com/in/bianca-camargo-machado/)
+- [Daniele](https://www.linkedin.com/in/daniele-horning-3692b799/)
+- [Jeferson Romano](https://www.linkedin.com/in/romanoiz)
+- Júlia Franco
+- [Pedro Leite](https://www.linkedin.com/in/pedrohpleite)
+- [Stéphanie Dias](https://www.linkedin.com/in/diasantostephanie26/)
+
+
+
 ## 🚀 Quick start
 
 1.  **Rodar o projeto**
