@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import PlayIcon from '@material-ui/icons/PlayArrow';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
@@ -15,6 +17,8 @@ import image1 from '../assets/images/artist/1.png';
 import image2 from '../assets/images/artist/2.png';
 import image3 from '../assets/images/artist/3.png';
 import image4 from '../assets/images/artist/4.png';
+
+import insegurancaAudio from '../assets/music/Gabz-inseguranca.mp3';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,6 +39,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Artist() {
+  const audioRef = React.useRef();
+
+  console.log(audioRef);
+
+  const handleClick = () => {
+    const { current: audioNode } = audioRef;
+
+    if (audioNode.paused) {
+      audioNode.play();
+    } else {
+      audioNode.pause();
+    }
+  };
+
   const classes = useStyles();
 
   const artistData = [
@@ -88,7 +106,7 @@ export default function Artist() {
                 </Typography>
               </Grid>
               <Grid>
-                <Link href="#" onClick={() => {}} variant="body2" css={{ color: '#2F80ED' }}>
+                <Link href="#" onClick={() => { }} variant="body2" css={{ color: '#2F80ED' }}>
                   Ver perfil completo
                 </Link>
               </Grid>
@@ -115,40 +133,45 @@ export default function Artist() {
             <Grid
               xs={12}
             >
-            <Paper className={classes.paper}>
-              <div css={{ display: 'flex', flexDirection: 'row' }}>
-                {image}
-                <div css={{ 
-                  display: 'flex',
-                  flexDirection: 'row',
-                  width: '100%',
-                  justifyContent: 'space-between',
-                  alignItems: 'center'
-                }}>
-                  <div css={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                    <Typography css={{ color: '#fff' }}>
-                      {title}
-                    </Typography>
-                    <Typography css={{ color: '#fff' }}>
-                      {subtitle}
-                    </Typography>
+              <Paper className={classes.paper}>
+                <div css={{ display: 'flex', flexDirection: 'row' }}>
+                  {image}
+                  <div css={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    width: '100%',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                  }}>
+                    <div css={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                      <Typography css={{ color: '#fff' }}>
+                        {title}
+                      </Typography>
+                      <Typography css={{ color: '#fff' }}>
+                        {subtitle}
+                      </Typography>
+                    </div>
+                    <div css={{
+                      alignItems: 'center',
+                      display: 'flex',
+                    }}>
+                      <Typography css={{ color: '#C8F4DC', textAlign: 'center' }}>
+                        {status && (
+                          <>
+                            <IconArrowUpward fontSize="small" color="primary" style={{ marginBottom: '-5px', color: '#C8F4DC' }} />
+                            {status}
+                          </>
+                        )}
+                      </Typography>
+                      <IconButton color="secondary" onClick={handleClick}>
+                        <PlayIcon />
+                      </IconButton>
+                    </div>
                   </div>
-                  <Typography css={{ color: '#C8F4DC', textAlign: 'center' }}>
-                    {status && (
-                      <>
-                        <IconArrowUpward fontSize="small" color="primary" style={{ marginBottom: '-5px', color: '#C8F4DC' }} />
-                        {status}
-                      </>
-                    )}
-                  </Typography>
+                  <audio preload="auto" src={insegurancaAudio} ref={audioRef} />
                 </div>
-                <audio controls>
-                  <source src="../assets/music/Gabz-inseguranca.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-            </Paper>
-          </Grid>
+              </Paper>
+            </Grid>
           )}
         </Grid>
       </Layout>
