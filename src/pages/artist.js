@@ -31,8 +31,6 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     paddingRight: '5px',
-  /* width: '20%',
-  height: '20%' */
   },
 }));
 
@@ -144,6 +142,10 @@ export default function Artist() {
                     )}
                   </Typography>
                 </div>
+                <audio controls>
+                  <source src="../assets/music/Gabz-inseguranca.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
               </div>
             </Paper>
           </Grid>
