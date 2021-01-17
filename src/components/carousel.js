@@ -16,6 +16,8 @@ const settings = {
 const StyledDiv = styled(Typography)(({ theme }) => ({
   paddingBottom: theme.spacing(3),
   paddingTop: theme.spacing(3),
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -26,8 +28,9 @@ export const CarouselItem = styled.div({
   alignItems: 'center',
   display: 'flex !important',
   justifyContent: 'center',
-  padding: '0 4px',
-  width: '33.333%',
+  padding: '8px',
+  position: 'relative',
+  width: '100%',
 });
 
 const dataProp = [1, 2, 3, 4, 5, 6];
@@ -44,7 +47,11 @@ export default function Carousel({
       </StyledTypography>
       <Slider {...settings}>
         {data.map((v, index) => (
-          <CarouselItem key={`carousel-item-${index}`}>{v}</CarouselItem>
+          <CarouselItem key={`carousel-item-${index}`}>
+            <div role="button" css={{ cursor: 'pointer' }} onClick={onClick}>
+              <img css={{ width: '100%', height: '100%' }} src={v} />
+            </div>
+          </CarouselItem>
         ))}
       </Slider>
     </StyledDiv>
