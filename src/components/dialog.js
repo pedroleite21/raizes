@@ -1,5 +1,7 @@
 import * as React from 'react';
 import AppBar from '@material-ui/core/AppBar';
+import MuiAlert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
@@ -25,6 +27,10 @@ import { Typography } from '@material-ui/core';
 import pixButton from '../assets/pix_button.png';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const ListItemText = styled(ListItemTextMaterial)({
   color: '#212121',
@@ -70,6 +76,19 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function Dialog() {
   const [ganhos, setGanhos] = React.useState(false);
   const { isOpen, toggleDrawer } = useDrawerContext();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <MaterialDialog
@@ -120,61 +139,61 @@ export default function Dialog() {
             </ListItem>
           </List>
         ) : (
-          <div css={{ padding: '12px 24px' }}>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <IconButton
-                  edge="start"
-                  color="primary"
-                  onClick={() => setGanhos(false)}
-                >
-                  <ArrowBackIcon />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <Typography color="primary">Ganhos</Typography>
-              </Grid>
-            </Grid>
-            <StyledCard>
-              <Grid container spacing={3}>
+            <div css={{ padding: '12px 24px' }}>
+              <Grid container spacing={2} alignItems="center">
                 <Grid item>
-                  <span css={{ display: 'block' }}>Saldo Atual: R$ 550</span>
-                  <span>Saldo Doado: R$ 165 no útlimo mês</span>
+                  <IconButton
+                    edge="start"
+                    color="primary"
+                    onClick={() => setGanhos(false)}
+                  >
+                    <ArrowBackIcon />
+                  </IconButton>
                 </Grid>
                 <Grid item>
-                  <img src={pixButton} />
+                  <Typography color="primary">Ganhos</Typography>
                 </Grid>
               </Grid>
-            </StyledCard>
-            <StyledCard>
-              <span>
-                Você contribuiu para 6 Jovens Artistas no último mês e você está
-                doando 30% do seu saldo no raízes.
+              <StyledCard>
+                <Grid container spacing={3}>
+                  <Grid item>
+                    <span css={{ display: 'block' }}>Saldo Atual: R$ 550</span>
+                    <span>Saldo Doado: R$ 165 no último mês</span>
+                  </Grid>
+                  <Grid item>
+                    <img src={pixButton} />
+                  </Grid>
+                </Grid>
+              </StyledCard>
+              <StyledCard>
+                <span>
+                  Você contribuiu para 6 Jovens Artistas no último mês e você está
+                  doando 30% do seu saldo no raízes.
               </span>
-            </StyledCard>
-            <div css={textFieldCss}>
-              <TextField
-                id="text-field"
-                label="Qual o valor de transferência?"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                InputProps={{ placeholder: 'R$ 20,00' }}
-              />
-            </div>
-            <div css={textFieldCss}>
-              <TextField
-                id="text-field"
-                label="Para quem você quer transferir?"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                InputProps={{ placeholder: 'Nome, CPF/CNPJ ou chave Pix' }}
-              />
-            </div>
-            <Button fullWidth color="primary" variant="contained">
-              Transferir
+              </StyledCard>
+              <div css={textFieldCss}>
+                <TextField
+                  id="text-field"
+                  label="Qual o valor de transferência?"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  InputProps={{ placeholder: 'R$ 20,00' }}
+                />
+              </div>
+              <div css={textFieldCss}>
+                <TextField
+                  id="text-field"
+                  label="Para quem você quer transferir?"
+                  fullWidth
+                  InputLabelProps={{ shrink: true }}
+                  InputProps={{ placeholder: 'Nome, CPF/CNPJ ou chave Pix' }}
+                />
+              </div>
+              <Button fullWidth color="primary" variant="contained" onClick={handleClick}>
+                Transferir
             </Button>
-          </div>
-        )}
+            </div>
+          )}
       </div>
       <BottomAppBar position="fixed" color="primary">
         <Toolbar>
@@ -183,6 +202,11 @@ export default function Dialog() {
           </IconButton>
         </Toolbar>
       </BottomAppBar>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          Valor transferido!
+        </Alert>
+      </Snackbar>
     </MaterialDialog>
   );
 }

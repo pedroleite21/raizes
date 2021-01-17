@@ -28,11 +28,7 @@ import image32 from '../assets/images/carousel/3-2.png';
 import image1 from '../assets/centro-historico-rio-pequena-africa.jpg';
 import image2 from '../assets/pequena-africa-1-2.jpg';
 import image3 from '../assets/pequena-africa-3.jpg';
-
-const imageSrcCss = {
-  height: 100,
-  width: '100%',
-};
+import SEO from '../components/seo';
 
 const content = [image1, image2, image3, image1];
 
@@ -83,6 +79,7 @@ export default function Content() {
 
   return (
     <div>
+      <SEO pageTitle="Dias Atuais - Rio de Janeiro" />
       <Header
         subHeader={
           <Typography component="h1" variant="h5" color="primary">

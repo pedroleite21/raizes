@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Layout from '../components/layout';
 import Header from '../components/header';
+import SEO from '../components/seo';
 
 // Images import
 import image1c from '../assets/images/carousel/1.png';
@@ -11,6 +12,7 @@ import image1c from '../assets/images/carousel/1.png';
 export default function Artist() {
   return (
     <div>
+      <SEO pageTitle="Gabz - Rio de Janeiro" />
       <Header
         subHeader={
           <>
