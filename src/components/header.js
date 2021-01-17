@@ -44,7 +44,9 @@ export default function Header({ subHeader = null, tabs }) {
         >
           <MenuIcon />
         </StyledMenuButton>
-        <div css={{ cursor: 'pointer' }} onClick={() => navigate('/')}><Logo /></div>
+        <div css={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+          <Logo />
+        </div>
       </StyledToolbar>
       {subHeader && <StyledPlace>{subHeader}</StyledPlace>}
       {tabs}
