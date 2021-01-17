@@ -6,6 +6,7 @@ import Map from '../components/map';
 import useGeolocation from '../utils/useGeolocation';
 import SearchBox from '../components/search_box';
 import { withStyles } from '@material-ui/core/styles';
+import { navigate } from 'gatsby';
 
 const MapDiv = styled.div({
   ...position('absolute', 0),
@@ -24,6 +25,11 @@ const positionCss = {
 
 export default function Home() {
   const coordinates = useGeolocation();
+
+  const nextPage = () => {
+    navigate('/place');
+  }
+  
 
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -45,6 +51,7 @@ export default function Home() {
       </MapDiv>
       <SearchBox css={{ ...positionCss, top: 48  }} />
       <ColorButton
+        onClick={nextPage}
         variant="contained"
         color="secondary"
         css={{ 
