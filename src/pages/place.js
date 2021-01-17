@@ -4,17 +4,24 @@ import IconMarker from '@material-ui/icons/Place';
 import Layout from '../components/layout';
 import Header from '../components/header';
 
+// Content images
+import image1 from '../assets/images/1.jpg';
+import image2 from '../assets/images/2.jpg';
+import image3 from '../assets/images/3.jpg';
+import image4 from '../assets/images/4.jpg';
+import image5 from '../assets/images/5.jpg';
+
 const content = [
-  { label: 'Dias Atuais' },
-  { label: '2010' },
-  { label: '2000' },
-  { label: '1990' },
-  { label: '1980' },
-  { label: '1970' },
-  { label: '1960' },
-  { label: '1950' },
-  { label: '1940' },
-  { label: '1930' },
+  { label: 'Dias Atuais', image: image1 },
+  { label: '2010', image: image2 },
+  { label: '2000', image: image3 },
+  { label: '1990', image: image4 },
+  { label: '1980', image: image5 },
+  { label: '1970', image: image2 },
+  { label: '1960', image: image3 },
+  { label: '1950', image: image4 },
+  { label: '1940', image: image5 },
+  { label: '1930', image: image2 },
 ];
 
 export default function Place() {
@@ -43,7 +50,7 @@ export default function Place() {
         }}
       >
         <div css={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-          {content.map(({ label }, index) => (
+          {content.map(({ label, image }, index) => (
             <div
               key={label}
               css={{
@@ -54,7 +61,7 @@ export default function Place() {
                 padding: '32px 16px',
               }}
             >
-              <span>Conteúdo</span>
+              <span><img src={image} alt="Logo" style={{ borderRadius: 10 }} /></span>
               <Typography
                 variant="h6"
                 component="span"
