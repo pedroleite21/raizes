@@ -26,10 +26,17 @@ export default function Home() {
   return (
     <>
       <MapDiv>
-        <Map coordinates={coordinates} onMarkerClick={() => console.log('vai pra página')} />
+        <Map
+          coordinates={coordinates}
+          onMarkerClick={() => console.log('vai pra página')}
+        />
       </MapDiv>
       <SearchBox css={{ ...positionCss, top: 48 }} />
-      <Button variant="contained" color="secondary" css={{ ...positionCss, bottom: 48 }}>
+      <Button
+        variant="contained"
+        color="secondary"
+        css={{ ...positionCss, bottom: 48 }}
+      >
         Confirmar local
       </Button>
     </>

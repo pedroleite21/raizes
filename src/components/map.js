@@ -7,7 +7,7 @@ const markerPosition = {
   lng: -43.188203359684444,
 };
 
-export default function Map({ coordinates = null, onMarkerClick = () => { } }) {
+export default function Map({ coordinates = null, onMarkerClick = () => {} }) {
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: process.env.GATSBY_MAPS_API,
   });
@@ -17,7 +17,7 @@ export default function Map({ coordinates = null, onMarkerClick = () => { } }) {
       <GoogleMap
         mapContainerStyle={{
           height: '100%',
-          width: '100%'
+          width: '100%',
         }}
         zoom={5}
         center={{
@@ -30,16 +30,13 @@ export default function Map({ coordinates = null, onMarkerClick = () => { } }) {
           disableDefaultUI: true,
         }}
       >
-        <Marker
-          onClick={onMarkerClick}
-          position={markerPosition}
-        />
+        <Marker onClick={onMarkerClick} position={markerPosition} />
       </GoogleMap>
-    )
+    );
   };
 
   if (loadError) {
-    return <div>Map cannot be loaded right now, sorry.</div>
+    return <div>Map cannot be loaded right now, sorry.</div>;
   }
 
   return isLoaded ? renderMap() : null;

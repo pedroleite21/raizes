@@ -12,5 +12,5 @@ export default function SearchBox(props) {
         />
       </Paper>
     </div>
-  )
+  );
 }
