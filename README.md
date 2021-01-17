@@ -1,11 +1,11 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="#">
+    <img alt="Raízes" src="https://github.com/pedroleite21/raizes/blob/main/src/assets/logo-raizes.png?raw=true" width="100" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's hello-world starter
+  Raízes Web App
 </h1>
 
 Raízes Web App para o hackathon CCR 2° edição.
