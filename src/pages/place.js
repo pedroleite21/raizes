@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import IconMarker from '@material-ui/icons/Place';
 import Layout from '../components/layout';
 import Header from '../components/header';
+import { navigate } from 'gatsby';
 
 // Content images
 import image1 from '../assets/images/1.jpg';
@@ -24,7 +25,22 @@ const content = [
   { label: '1930', image: image2 },
 ];
 
+const cardStyle = {
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#474747',
+  },
+  '&:active': {
+    backgroundColor: '#474747',
+  },
+};
+
 export default function Place() {
+
+  const nextPage = () => {
+    navigate('/content');
+  }
+
   return (
     <div>
       <Header
@@ -52,8 +68,11 @@ export default function Place() {
         <div css={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
           {content.map(({ label, image }, index) => (
             <div
+              onClick={nextPage}
+              role='button'
               key={label}
               css={{
+                ...cardStyle,
                 borderRight: '2px solid #fff',
                 borderRightColor: index === 0 && '#E0A31B',
                 display: 'flex',
